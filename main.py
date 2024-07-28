@@ -1,9 +1,10 @@
 def main():
-    bookpath = "books/frankestein.txt"
+    bookpath = "books/frankestein"
     text = getbooktext(bookpath)
     counter = counterwords(text)
     counterch = countercharacters(text)
-    print(counterch)
+    reportbook(bookpath, counter, counterch)
+
 
 def getbooktext(path):
     with open(path) as f:
@@ -31,4 +32,16 @@ def countercharacters(text):
 
     return countofcharacters
 
-main()      
+def reportbook(path, countwd, countch):
+    print("         REPORT")
+    print("-------------------------")
+    print(path)
+    print()
+    print(f"{countwd} words were found")
+    for ch in countch:
+        num = countch.get(ch)
+        print(f"The '{ch}' character was found {num} times")
+    print("-------------------------")
+    print("         END REPORT")
+
+main()     
