@@ -1,5 +1,5 @@
 def main():
-    bookpath = "books/frankestein"
+    bookpath = "books/frankestein.txt"
     text = getbooktext(bookpath)
     counter = counterwords(text)
     counterch = countercharacters(text)
